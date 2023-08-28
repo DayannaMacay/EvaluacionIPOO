@@ -6,8 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-import java.time.LocalDate;
-
 @Data
 @Entity
 public class Registro {
@@ -17,7 +15,7 @@ public class Registro {
     private Integer id;
     private String placa;
     private String marca;
-    private String kilometraje;
-    private int color;
-    private LocalDate anio;
+    private int kilometraje;
+    private String color;
+    private int anio;
 }

@@ -1,5 +1,6 @@
 package com.itsqmet.EvaluacionI.controllers;
 
+
 import com.itsqmet.EvaluacionI.entidades.Registro;
 import com.itsqmet.EvaluacionI.repositorios.RegistroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +13,13 @@ import java.util.List;
 
 @Controller
 public class RegistroController {
-    @Autowired //Inyectar dependencias al repositorio de empleados
+    @Autowired
     RegistroRepository registroRepository;
 
-    @GetMapping("/#formulario")
+    @GetMapping("/formulario")
     public String formulario(Model model){
         model.addAttribute("registro", new Registro());
-        return "/#formulario";
+        return "formulario";
     }
 
     @GetMapping ("/lista")
@@ -28,7 +29,7 @@ public class RegistroController {
         return "lista";
     }
 
-    @PostMapping("/")
+    @PostMapping("/formulario")
     public String crear(Registro registro){
         registroRepository.save(registro);
         return "redirect:/lista";
